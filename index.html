@@ -3,43 +3,24 @@
 <head>
 
   <meta charset="utf-8">
-  <title>the robot</title>
+  <title>Robot</title>
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
 
-<style>
-input{
-  width:100%;
-  display:block;
-}
-</style>
 </head>
 <body class="container">
-<h1>Our robot</h1>
+<h1>Robot</h1>
 <br>
 <form id="form">
-  <input type="text" id="npt" value="Don't make me sing" class="form-control">
+  <input type="text" value="Don't make me sing" class="form-control">
   <br>
-  <button type="submit" onclick="speak()" class="btn btn-default">say it</button>
+  <button type="submit" class="btn btn-default">say it</button>
 </form>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<script src="js/main.js"></script>
 <script>
-  var inpt = $('#npt');
-  var speech = new SpeechSynthesisUtterance();
   speech.lang = "en-GB";
-
-  function speak() {
-    txt = inpt[0].value;
-    speech.text = txt;
-    speechSynthesis.speak(speech);
-    inpt.val('').focus();
-  }
-
-  $('#form').submit(function(e){
-    e.preventDefault();
-  });
-
 </script>
 </body>
 </html>
